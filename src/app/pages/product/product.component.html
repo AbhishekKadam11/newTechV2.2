@@ -1,0 +1,140 @@
+<div class="row">
+  <div class="col-md-6">
+
+
+      <nb-card>
+        <nb-card-header>Product Details</nb-card-header>
+        <nb-card-body>
+          <!--<form>-->
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="Product Title">Product Title</label>
+                <input type="text" [(ngModel)]="product.title" [ngModelOptions]="{standalone: true}" class="form-control"
+                       id="Product Title" placeholder="Product Title">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label>Product Category</label>
+                <!--&lt;!&ndash;<select2 [options]="category" [(ngModel)]="product.category" (onSelect)="onSelectCategory($event)" style="width: 100%" id="BrandCategory" [ngModelOptions]="{standalone: true}" ></select2>&ndash;&gt;-->
+
+          <!--<ng-simple-select [(ngModel)]="product.category"-->
+                            <!--name="fieldName"-->
+                            <!--ngDefaultControl>-->
+            <!--<ng-simple-select-option *ngFor="let option of category"-->
+                                     <!--[value]="option['text']">-->
+              <!--{{option['text']}}-->
+            <!--</ng-simple-select-option>-->
+          <!--</ng-simple-select>-->
+              <!--</div>-->
+            <!--</div>-->
+
+              </div>
+              <div class="form-group col-md-6">
+                <label>Product Brand</label>
+                <!--<select2 [options]="brand" placeholder="Select Brand" (onSelect)="onSelectBrand($event)" style="width: 100%" [(ngModel)]="product.brand" id="BrandName"
+                [ngModelOptions]="{standalone: true}"></select2>-->
+                <!--<ng-simple-select [(ngModel)]="product.brand"-->
+                                  <!--name="fieldName"-->
+                                  <!--ngDefaultControl>-->
+                  <!--<ng-simple-select-option *ngFor="let option of brand"-->
+                                           <!--[value]="option['text']">-->
+                    <!--{{option['text']}}-->
+                  <!--</ng-simple-select-option>-->
+                <!--</ng-simple-select>-->
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label for="ArrivalDate">Arrival Date</label>
+
+                <div class="input-group"  >
+                  <input class="form-control" style="float:none; z-index: auto !important;" placeholder="DD-MM-YYYY" ngx-mydatepicker
+                         name="mydate" id="ArrivalDate"
+                         [(ngModel)]="product.arrivaldate" [options]="dateOptions" #dp="ngx-mydatepicker"/>
+
+                  <span class="input-group-btn">
+                    <button type="button" style="z-index: auto !important;" class="btn btn-outline-danger btn-icon btn-tn" (click)="dp.clearDate()">
+                    <i class="ion-close-round"></i>
+                    </button>
+                  </span>
+                  <span class="input-group-btn">
+                    <button type="button" style="z-index: auto !important;" class="btn btn-outline-primary btn-icon btn-tn" (click)="dp.toggleCalendar()">
+                    <i class="fa fa-calendar"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="Modal No.">Modal No.</label>
+                <input type="text" [(ngModel)]="product.modalno" [ngModelOptions]="{standalone: true}"
+                       class="form-control" id="Modal No." placeholder="Modal No.">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="Price">Price</label>
+                <input type="text" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}"
+                       class="form-control" id="Price" placeholder="Price">
+              </div>
+
+            </div>
+          <!--</form>-->
+        </nb-card-body>
+      </nb-card>
+
+    <nb-card>
+      <nb-card-header>Product Picture</nb-card-header>
+      <nb-card-body>
+        <image-upload
+          [max]="100"
+          [url]="'http://localhost:8080/api/upload'"
+          [buttonCaption]="'Select Poster Images!'"
+          (uploadFinished)="posterImageUploaded($event)"
+          (removed)="onRemoved($event)"
+        ></image-upload>
+        <image-upload
+          [max]="100"
+          [url]="'http://localhost:8080/api/upload'"
+          [buttonCaption]="'Select Images!'"
+          [dropBoxMessage]="'Drop your images here!'"
+          (uploadFinished)="imageUploaded($event)"
+          (removed)="onRemoved($event)"
+        ></image-upload>
+      </nb-card-body>
+    </nb-card>
+
+  </div>
+  <div class="col-md-6">
+  <nb-card>
+    <nb-card-header>Product Description</nb-card-header>
+    <nb-card-body>
+      <form>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label >Short Description </label>
+
+            <!--<ck-editor name="editor1" [(ngModel)]="product.shortdescription" skin="moono-lisa" lang="en" [fullPage]="true"></ck-editor>-->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label >Full Description </label>
+
+            <!--<ck-editor name="editor1" [(ngModel)]="product.fulldescription" skin="moono-lisa" lang="en" [fullPage]="true"></ck-editor>-->
+          </div>
+        </div>
+
+
+        <button type="submit" (click)="setProduct()"  class="btn btn-hero-success">Submit</button>
+        <div class="row">
+          <div class="col-md-8" style="color: green" *ngIf="savedSuccess">New Product Added Successfully!!!</div>
+          <div class="col-md-8" style="color: red" *ngIf="saveUnsuccess">Unable to Add!!!</div>
+        </div>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>
+</div>
+

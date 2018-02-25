@@ -1,0 +1,119 @@
+<!--<div class="row">-->
+  <!--<div class="col-lg-12">-->
+    <!--<nb-card>-->
+      <!--<nb-card-header>Default Inputs</nb-card-header>-->
+      <!--<nb-card-body>-->
+        <!--<div class="input-group">-->
+          <!--<input type="text" placeholder="Project" class="form-control"/>-->
+        <!--</div>-->
+        <!--<div class="row full-name-inputs">-->
+          <!--<div class="col-sm-6 input-group">-->
+            <!--<input type="text" placeholder="Nick" class="form-control"/>-->
+          <!--</div>-->
+          <!--<div class="col-sm-6 input-group">-->
+            <!--<input type="text" placeholder="Last Name" class="form-control"/>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="input-group">-->
+          <!--<input type="password" placeholder="Password" class="form-control"/>-->
+        <!--</div>-->
+        <!--<div class="input-group has-person-icon">-->
+          <!--<input type="text" placeholder="With Icon" class="form-control"/>-->
+        <!--</div>-->
+        <!--<div class="input-group input-group-rounded">-->
+          <!--<input type="text" placeholder="Rounded border" class="form-control"/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<input type="text" placeholder="Project" class="form-control"/>-->
+          <!--<small class="form-text">A block of help text that breaks into a new line and may extend beyond one line.-->
+          <!--</small>-->
+        <!--</div>-->
+        <!--<div class="input-group">-->
+          <!--<input type="text" placeholder="Disabled input" class="form-control" disabled/>-->
+        <!--</div>-->
+        <!--<div class="input-group">-->
+          <!--<textarea rows="5" placeholder="Text Area" class="form-control"></textarea>-->
+        <!--</div>-->
+        <!--<div class="input-group input-group-sm">-->
+          <!--<input type="text" placeholder="Small Input" class="form-control"/>-->
+        <!--</div>-->
+        <!--<div class="input-group input-group-lg">-->
+          <!--<input type="text" placeholder="Large Input" class="form-control"/>-->
+        <!--</div>-->
+      <!--</nb-card-body>-->
+    <!--</nb-card>-->
+
+
+  <!--</div>-->
+
+
+<!--</div>-->
+
+<h2 class="title">Sign In</h2>
+
+<!--<form (ngSubmit)="login()" #form="ngForm" autocomplete="nope">-->
+
+
+
+
+  <!--<div class="form-group">-->
+    <!--<label for="input-email" class="sr-only">Email address</label>-->
+    <!--<input name="email" [(ngModel)]="user.email" id="input-email" pattern=".+@.+..+" class="form-control"-->
+    <!--placeholder="Email address" #email="ngModel"-->
+    <!--autofocus >-->
+    <!--&lt;!&ndash;<small class="form-text error" *ngIf="email.invalid && email.touched && email.errors?.required"> Email is required!          </small>&ndash;&gt;-->
+    <!--&lt;!&ndash;<small class="form-text error" *ngIf="email.invalid && email.touched && email.errors?.pattern"> Email should be the real&ndash;&gt;-->
+    <!--&lt;!&ndash;one!          </small>&ndash;&gt;-->
+  <!--</div>-->
+
+  <!--<div class="form-group"><label for="input-password" class="sr-only">Password</label> <input-->
+    <!--name="password" [(ngModel)]="user.password" type="password" id="input-password" class="form-control"-->
+    <!--placeholder="Password" #password="ngModel" >-->
+    <!--&lt;!&ndash;<small class="form-text error&ndash;&gt;-->
+    <!--&lt;!&ndash;" *ngIf="password.invalid && password.touched && password.errors?.required"> Password is&ndash;&gt;-->
+    <!--&lt;!&ndash;required!          </small>&ndash;&gt;-->
+    <!--&lt;!&ndash;<small&ndash;&gt;-->
+      <!--&lt;!&ndash;class="form-text error" *ngIf="password.invalid && password.touched && (password.errors?.minlength || password.errors?.maxlength)"> Password should contains from {{&ndash;&gt;-->
+    <!--&lt;!&ndash;getConfigValue('forms.validation.password.minLength') }} to {{&ndash;&gt;-->
+    <!--&lt;!&ndash;getConfigValue('forms.validation.password.maxLength') }} characters          </small>&ndash;&gt;-->
+  <!--</div>-->
+
+  <!--<div class="form-group accept-group col-sm-12">-->
+  <!--<nb-checkbox name="rememberMe" [(ngModel)]="user.rememberMe">Remember me</nb-checkbox>-->
+  <!--<a class="forgot-password" routerLink="../request-password">Forgot Password?</a>        </div>-->
+  <!--<button class="btn btn-block btn-hero-success" > Sign In        </button>-->
+<!--</form>-->
+<form [formGroup]="form"  class="form-horizontal">
+
+  <div class="form-group" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
+    <label for="input-email" class="sr-only">Email address</label>
+    <div class="">
+      <input [formControl]="email" type="email" class="form-control" id="input-email" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
+
+    <label for="input-password" class="sr-only">Password</label>
+    <div class="">
+      <input [formControl]="password" type="password" class="form-control" id="input-password" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group ">
+    <div class="">
+      <button [disabled]="!form.valid" type="submit" class="btn btn-block btn-hero-success" (click)="onSubmit(form.value)">Sign in</button>
+      <a routerLink="/login" class="forgot-pass">Forgot password?</a>
+    </div>
+  </div>
+</form>
+<div class="links">
+
+
+
+
+  <small class="form-text"> Don't have an account? <a routerlink="../auth/register" href="#/auth/register"><strong>Sign Up</strong></a>
+  </small>
+
+</div>
+
+
+

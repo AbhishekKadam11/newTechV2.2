@@ -1,0 +1,245 @@
+<!--<div class="row">-->
+  <!--<div class="col-xxxl-3 col-md-6">-->
+    <!--<ngx-status-card title="Light" type="primary">-->
+      <!--<i class="nb-lightbulb"></i>-->
+    <!--</ngx-status-card>-->
+  <!--</div>-->
+
+  <!--<div class="col-xxxl-3 col-md-6">-->
+    <!--<ngx-status-card title="Roller Shades" type="success">-->
+      <!--<i class="nb-roller-shades"></i>-->
+    <!--</ngx-status-card>-->
+  <!--</div>-->
+
+  <!--<div class="col-xxxl-3 col-md-6">-->
+    <!--<ngx-status-card title="Wireless Audio" type="info">-->
+      <!--<i class="nb-audio"></i>-->
+    <!--</ngx-status-card>-->
+  <!--</div>-->
+
+  <!--<div class="col-xxxl-3 col-md-6">-->
+    <!--<ngx-status-card title="Coffee Maker" type="warning">-->
+      <!--<i class="nb-coffee-maker"></i>-->
+    <!--</ngx-status-card>-->
+  <!--</div>-->
+<!--</div>-->
+<div class="row">
+  <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-sm-12 col-is-10" >
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let slide of slides" [id]="slide.id">
+        <img [src]="slide.img.url" width="100%">
+        <!--<div class="carousel-caption">-->
+        <!--<h3>{{slide.description.title}}</h3>-->
+        <!--<p>{{slide.description.detail}}</p>-->
+        <!--</div>-->
+      </ng-template>
+    </ngb-carousel>
+
+  </div>
+</div>
+
+<div class="row" style="margin-top: 10px">
+  <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-sm-12 col-is-10">
+    <nb-card>
+      <nb-card-header class="color bg-info"><h3>Motherboard</h3> </nb-card-header>
+      <nb-card-body>
+        <div class="ngspinner" *ngIf="isRunning">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+        <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-sm-12 col-is-8">
+          <ngx-carousel
+            [inputs]="carouselTile"
+            (carouselLoad)="carouselTileLoad($event)">
+            <ngx-tile NgxCarouselItem *ngFor="let slide of motherboard">
+              <a (click)="productDetails(slide['data']['_id'])">
+              <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+              <blockquote class="blockquote">
+              <p class="mb-0" >{{slide['data']['title']}} </p>
+              </blockquote>
+              </a>
+            </ngx-tile>
+            <a class="right carousel-control-prev" NgxCarouselPrev role="button">
+              <span aria-hidden="true" class="carousel-control-prev-icon leftRs"></span>
+              <span class="sr-only">Prev</span>
+            </a>
+            <a class="right carousel-control-next" NgxCarouselNext role="button">
+              <span aria-hidden="true" class="carousel-control-next-icon rightRs"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </ngx-carousel>
+        </div>
+
+      </nb-card-body>
+      <nb-card-footer style="padding: 0.5rem">
+        <nb-actions size="medium" fullWidth>
+          <nb-action>
+
+              <i style="font-size: 2rem" class="nb-grid-b-outline"></i>
+            <a href="#/pages/productlist/Motherboard" routerLink="['../pages/productlist', 'Motherboard']"><span>View More</span>
+            </a>
+          </nb-action>
+        </nb-actions>
+      </nb-card-footer>
+    </nb-card>
+
+  </div>
+</div>
+
+<div class="row" style="margin-top: 10px">
+  <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-is-10">
+    <nb-card>
+      <nb-card-header class="color bg-info"><h3>Processor</h3> </nb-card-header>
+      <nb-card-body>
+        <!--<div class="ngspinner" *ngIf="isRunning">-->
+          <!--<div class="rect1"></div>-->
+          <!--<div class="rect2"></div>-->
+          <!--<div class="rect3"></div>-->
+          <!--<div class="rect4"></div>-->
+          <!--<div class="rect5"></div>-->
+        <!--</div>-->
+        <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-is-8" >
+          <!--<app-spinner [threshold]="1000" [template]="template" [loadingText]="''"  > </app-spinner>-->
+          <ngx-carousel
+            [inputs]="carouselTile"
+            (carouselLoad)="carouselTileLoad($event)">
+            <ngx-tile NgxCarouselItem *ngFor="let slide of processor">
+              <a (click)="productDetails(slide['data']['_id'])">
+                <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+                <blockquote class="blockquote">
+                  <p class="mb-0" >{{slide['data']['title']}} </p>
+                </blockquote>
+              </a>
+            </ngx-tile>
+            <a class="right carousel-control-prev" NgxCarouselPrev role="button">
+              <span aria-hidden="true" class="carousel-control-prev-icon leftRs"></span>
+              <span class="sr-only">Prev</span>
+            </a>
+            <a class="right carousel-control-next" NgxCarouselNext role="button">
+              <span aria-hidden="true" class="carousel-control-next-icon rightRs"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </ngx-carousel>
+        </div>
+      </nb-card-body>
+      <nb-card-footer style="padding: 0.5rem">
+        <nb-actions size="medium" fullWidth>
+          <nb-action>
+
+            <i style="font-size: 2rem" class="nb-grid-b-outline"></i>
+            <a href="#/pages/productlist/Processor" routerLink="['../pages/productlist', 'Processor']"><span>View More</span>
+            </a>
+          </nb-action>
+        </nb-actions>
+      </nb-card-footer>
+    </nb-card>
+
+  </div>
+</div>
+
+<div class="row" style="margin-top: 10px">
+  <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-is-10">
+    <nb-card>
+      <nb-card-header class="color bg-info"><h3>Graphic Card</h3> </nb-card-header>
+      <nb-card-body>
+        <!--<div class="ngspinner" *ngIf="isRunning">-->
+          <!--<div class="rect1"></div>-->
+          <!--<div class="rect2"></div>-->
+          <!--<div class="rect3"></div>-->
+          <!--<div class="rect4"></div>-->
+          <!--<div class="rect5"></div>-->
+        <!--</div>-->
+        <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-is-8">
+          <ngx-carousel
+            [inputs]="carouselTile"
+            (carouselLoad)="carouselTileLoad($event)">
+            <ngx-tile NgxCarouselItem *ngFor="let slide of graphiccard">
+              <a (click)="productDetails(slide['data']['_id'])">
+                <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+                <blockquote class="blockquote">
+                  <p class="mb-0" >{{slide['data']['title']}} </p>
+                </blockquote>
+              </a>
+            </ngx-tile>
+            <a class="right carousel-control-prev" NgxCarouselPrev role="button">
+              <span aria-hidden="true" class="carousel-control-prev-icon leftRs"></span>
+              <span class="sr-only">Prev</span>
+            </a>
+            <a class="right carousel-control-next" NgxCarouselNext role="button">
+              <span aria-hidden="true" class="carousel-control-next-icon rightRs"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </ngx-carousel>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+  </div>
+</div>
+<div class="row" style="margin-top: 10px">
+  <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-is-10">
+    <nb-card>
+      <nb-card-header class="color bg-info"><h3>Router</h3> </nb-card-header>
+      <nb-card-body>
+        <!--<div class="ngspinner" *ngIf="isRunning">-->
+          <!--<div class="rect1"></div>-->
+          <!--<div class="rect2"></div>-->
+          <!--<div class="rect3"></div>-->
+          <!--<div class="rect4"></div>-->
+          <!--<div class="rect5"></div>-->
+        <!--</div>-->
+        <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-is-8">
+          <ngx-carousel
+            [inputs]="carouselTile"
+            (carouselLoad)="carouselTileLoad($event)">
+            <ngx-tile NgxCarouselItem *ngFor="let slide of routers">
+              <a (click)="productDetails(slide['data']['_id'])">
+                <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+                <blockquote class="blockquote">
+                  <p class="mb-0" >{{slide['data']['title']}} </p>
+                </blockquote>
+              </a>
+            </ngx-tile>
+            <a class="right carousel-control-prev" NgxCarouselPrev role="button">
+              <span aria-hidden="true" class="carousel-control-prev-icon leftRs"></span>
+              <span class="sr-only">Prev</span>
+            </a>
+            <a class="right carousel-control-next" NgxCarouselNext role="button">
+              <span aria-hidden="true" class="carousel-control-next-icon rightRs"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </ngx-carousel>
+
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+  </div>
+</div>
+<!--<div class="row">-->
+  <!--<div class="col-xxxl-9 col-xl-12">-->
+    <!--<ngx-rooms></ngx-rooms>-->
+  <!--</div>-->
+
+  <!--<div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">-->
+    <!--<ngx-contacts></ngx-contacts>-->
+  <!--</div>-->
+
+  <!--<div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">-->
+    <!--<ngx-solar [chartValue]="72"></ngx-solar>-->
+
+    <!--<ngx-kitten></ngx-kitten>-->
+  <!--</div>-->
+
+  <!--<div class="col-xxxl-3 col-xxl-4 col-md-5">-->
+    <!--<ngx-traffic></ngx-traffic>-->
+    <!--<ngx-weather></ngx-weather>-->
+  <!--</div>-->
+
+  <!--<div class="col-xxxl-6 col-xxl-12 col-md-7">-->
+    <!--<ngx-security-cameras></ngx-security-cameras>-->
+  <!--</div>-->
+<!--</div>-->
