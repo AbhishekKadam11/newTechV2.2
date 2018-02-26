@@ -21,7 +21,7 @@ import 'rxjs/add/operator/delay';
   template: `
     <nb-layout [center]="layout.id === 'center-column'" windowMode>
       <nb-layout-header fixed>
-        <ngx-header [position]="normal"></ngx-header>
+        <ngx-header [position]="true"></ngx-header>
       </nb-layout-header>
 
       <!--<nb-sidebar class="menu-sidebar"-->
@@ -55,7 +55,7 @@ import 'rxjs/add/operator/delay';
                    tag="settings-sidebar"
                    state="collapsed"
                    fixed
-                   [right]="right">
+                   [right]="true">
         <ngx-theme-settings></ngx-theme-settings>
       </nb-sidebar>
     </nb-layout>
