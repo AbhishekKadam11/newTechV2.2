@@ -4,7 +4,7 @@ var app = express();
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
 // Start the app by listening on the default
+// var WORKERS = process.env.WEB_CONCURRENCY || 1;
+
 // Heroku port
-app.listen(config.port, function () {
-  console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
-});
+app.listen(process.env.PORT || 8080);
