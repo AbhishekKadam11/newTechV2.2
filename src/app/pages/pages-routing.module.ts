@@ -22,9 +22,6 @@ const routes: Routes = [{
       path: 'maps',
       loadChildren: './maps/maps.module#MapsModule',
     },  {
-      path: 'editors',
-      loadChildren: './editors/editors.module#EditorsModule',
-    }, {
       path: 'forms',
       loadChildren: './forms/forms.module#FormsModule',
     }, {
