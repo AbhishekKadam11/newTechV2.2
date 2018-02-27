@@ -7,4 +7,4 @@ app.use(express.static(__dirname + '/dist'));
 // var WORKERS = process.env.WEB_CONCURRENCY || 1;
 
 // Heroku port
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT);
