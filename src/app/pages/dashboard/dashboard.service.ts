@@ -11,8 +11,8 @@ export class DashboardService {
   }
 
   dashboardProductList() {
-    // return this.http.get('https://newtechserver.herokuapp.com/api/dashboardProductlist')
-    return this.http.get(this.globalShared['serverpath'] + 'dashboardProductlist')
+     return this.http.get('https://newtechserver.herokuapp.com/api/dashboardProductlist')
+ //   return this.http.get(this.globalShared['serverpath'] + 'dashboardProductlist')
       .map(res => res.json())
       .map((res) => {
         return res;
