@@ -17,6 +17,10 @@
     order: 1;
     flex-direction: row-reverse;
   }
+  .cart {
+    order: 1;
+    flex-direction: row-reverse;
+  }
 
   .logo-containter {
     display: flex;
@@ -112,4 +116,5 @@
     }
   }
 }
+
 

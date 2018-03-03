@@ -9,15 +9,38 @@
   <!--<ngx-theme-switcher></ngx-theme-switcher>-->
 </div>
 
+<!--<nb-actions-->
+  <!--size="medium"-->
+  <!--class="header-container"-->
+  <!--[class.right]="position === 'normal'"-->
+  <!--[class.left]="position === 'inverse'">-->
+  <!--<nb-action >-->
+
+    <!--<div  [hidden]="!hidebttn">-->
+      <!--<nb-user (menuClick)="onMenuClick($event)" [name]="profileName" [picture]="user?.picture"></nb-user>-->
+
+    <!--</div>-->
+    <!--<div [hidden]="hidebttn">-->
+      <!--&lt;!&ndash;<a router-link="/pages/forms/inputs" routerLinkActive="active" class ="signin">Sign-In</a>&ndash;&gt;-->
+      <!--<a routerLink="../auth/login" href="#/auth/login"><strong>Sign-In</strong> </a>-->
+      <!--<a routerlink="../auth/register" href="#/auth/register" ><strong>Sign Up</strong></a>-->
+    <!--</div>-->
+  <!--</nb-action>-->
+
+  <!--<nb-action class="control-item">-->
+    <!--<nb-search type="rotate-layout" ></nb-search>-->
+  <!--</nb-action>-->
+<!--</nb-actions>-->
 <nb-actions
   size="medium"
   class="header-container"
-  [class.right]="position === 'normal'"
+  [class.right]="true"
   [class.left]="position === 'inverse'">
+  <!--<nb-action icon="nb-grid-b" class="toggle-layout" (click)="toggleSettings()"></nb-action>-->
   <nb-action>
 
-    <div  [hidden]="!hidebttn">
-      <nb-user (menuClick)="onMenuClick($event)" [name]="profileName" [picture]="user?.picture"></nb-user>
+    <div  [hidden]="!hidebttn" >
+      <nb-user  (menuClick)="onMenuClick($event)" [name]="profileName" [picture]="user?.picture"></nb-user>
 
     </div>
     <div [hidden]="hidebttn">
@@ -27,8 +50,15 @@
     </div>
   </nb-action>
 
+  <!--<nb-action class="control-item" disabled icon="nb-notifications"></nb-action>-->
+
+  <!--<nb-action class="control-item"  style="position: relative;"><i class="fa fa-shopping-bag" style="font-size: xx-large;" aria-hidden="true">-->
+  <!--<span class="indicator" >3</span>-->
+  <!--</i>-->
+  <!--</nb-action>-->
+
   <nb-action class="control-item">
-    <nb-search type="rotate-layout" ></nb-search>
+    <nb-search type="rotate-layout" (click)="startSearch()"></nb-search>
   </nb-action>
 </nb-actions>
 
