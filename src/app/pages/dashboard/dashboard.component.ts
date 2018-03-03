@@ -40,7 +40,8 @@ export class DashboardComponent implements OnInit {
       this.routers = result['router'];
     //  this.spinnerService.hide();
       this.isRunning = false;
-       console.log(globalShared);
+      console.log(window.location.href)
+     //  console.log(globalShared);
     });
 
   }
