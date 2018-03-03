@@ -56,7 +56,7 @@
             (carouselLoad)="carouselTileLoad($event)">
             <ngx-tile NgxCarouselItem *ngFor="let slide of motherboard">
               <a (click)="productDetails(slide['data']['_id'])">
-              <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+              <img [src]="globalShared['serverpath']+slide['image']" class="thumbnail mx-auto d-block">
               <blockquote class="blockquote">
               <p class="mb-0" >{{slide['data']['title']}} </p>
               </blockquote>
@@ -108,7 +108,7 @@
             (carouselLoad)="carouselTileLoad($event)">
             <ngx-tile NgxCarouselItem *ngFor="let slide of processor">
               <a (click)="productDetails(slide['data']['_id'])">
-                <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+                <img [src]="globalShared['serverpath']+slide['image']" class="thumbnail mx-auto d-block">
                 <blockquote class="blockquote">
                   <p class="mb-0" >{{slide['data']['title']}} </p>
                 </blockquote>
@@ -158,7 +158,7 @@
             (carouselLoad)="carouselTileLoad($event)">
             <ngx-tile NgxCarouselItem *ngFor="let slide of graphiccard">
               <a (click)="productDetails(slide['data']['_id'])">
-                <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+                <img [src]="globalShared['serverpath']+slide['image']" class="thumbnail mx-auto d-block">
                 <blockquote class="blockquote">
                   <p class="mb-0" >{{slide['data']['title']}} </p>
                 </blockquote>
@@ -197,7 +197,7 @@
             (carouselLoad)="carouselTileLoad($event)">
             <ngx-tile NgxCarouselItem *ngFor="let slide of routers">
               <a (click)="productDetails(slide['data']['_id'])">
-                <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+                <img [src]="globalShared['serverpath']+slide['image']" class="thumbnail mx-auto d-block">
                 <blockquote class="blockquote">
                   <p class="mb-0" >{{slide['data']['title']}} </p>
                 </blockquote>
