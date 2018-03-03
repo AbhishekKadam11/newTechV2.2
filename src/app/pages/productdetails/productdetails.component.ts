@@ -34,7 +34,7 @@ export class ProductdetailsComponent implements OnInit {
               private productdetailsaervice: ProductDetailsService,
               private stateService: StateService,
               private cdRef: ChangeDetectorRef,
-              private globalShared: GlobalShared,
+              public globalShared: GlobalShared,
               private cartService: CartService) {
 
     this.stateService.setSidebarState(this.stateService.sidebars[2]);
