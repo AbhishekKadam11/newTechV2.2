@@ -27,6 +27,8 @@ export class SearchService {
      })
        .map((res) => {
          return res;
+       }, (err) => {
+         return err;
        });
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, ViewChild } from '@angular/core';
 
 import { NbMenuService, NbSidebarService, NbSearchService } from '@nebular/theme';
 // import { UserService } from '../../../@core/data/users.service';
@@ -27,7 +27,13 @@ export class HeaderComponent implements OnInit {
   menuClick: EventEmitter<NbMenuService>;
   searchString: string;
 
-  userMenu = [{ title: 'Profile', item: 'profile'  }, { title: 'Log out' , item: 'logout' }];
+  userMenu = [{ title: 'Profile', path: 'profile'  }, { title: 'Log out' , path: 'logout' }];
+
+  public items = [
+    { name: 'John', otherProperty: 'Foo' },
+    { name: 'Joe', otherProperty: 'Bar' }
+  ];
+
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
@@ -54,12 +60,13 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  onMenuClick($event) {
-    if ($event.item === 'profile') {
+  onMenuClick(path) {
+    if (path === 'profile') {
       this.router.navigate(['/pages/profile']);
     }
-    if ($event.item === 'logout') {
+    if (path === 'logout') {
       this.userService.logout();
+      this.router.navigate(['/pages/dashboard']);
       this.hidebttn = false;
     }
   }

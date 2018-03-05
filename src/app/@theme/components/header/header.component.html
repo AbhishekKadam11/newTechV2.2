@@ -31,6 +31,8 @@
     <!--<nb-search type="rotate-layout" ></nb-search>-->
   <!--</nb-action>-->
 <!--</nb-actions>-->
+
+
 <nb-actions
   size="medium"
   class="header-container"
@@ -40,8 +42,19 @@
   <nb-action>
 
     <div  [hidden]="!hidebttn" >
-      <nb-user  (menuClick)="onMenuClick($event)" [name]="profileName" [picture]="user?.picture"></nb-user>
+    <!--<button [nbContextMenu]="userMenu"></button> -->
+      <div class="dropdown ghost-dropdown" ngbDropdown>
 
+      <nb-user class="dropdown-toggle" ngbDropdownToggle   [name]="profileName" [picture]="user?.picture"></nb-user>
+        <!--<ul class="dropdown-menu" ngbDropdownMenu>-->
+          <!--<li *ngFor="let menu of userMenu" class=" ">{{menu.title}}</li>-->
+
+        <!--</ul>-->
+        <ul class="dropdown-menu" ngbDropdownMenu>
+          <li class="dropdown-item" *ngFor="let menu of userMenu" (click)="onMenuClick(menu.path)"> {{menu.title}} </li>
+
+        </ul>
+      </div>
     </div>
     <div [hidden]="hidebttn">
       <!--<a router-link="/pages/forms/inputs" routerLinkActive="active" class ="signin">Sign-In</a>-->

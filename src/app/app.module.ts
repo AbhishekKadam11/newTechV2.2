@@ -38,6 +38,7 @@ import { GlobalShared } from './app.global';
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+
     // PlusSpinnerModule.forRoot(),
 
   ],
