@@ -38,10 +38,6 @@ export class SearchresultComponent implements OnInit {
     });
   }
 
-  // ngAfterViewInit() {
-  //   this.productType = {'All': true};
-  // }
-
   filterProducts(event, category) {
 
     if ((this.userChoice.length) >=  0 ) {
@@ -68,8 +64,10 @@ export class SearchresultComponent implements OnInit {
     }, (error) => {
       this.errorMessage = error['error'];
     })
+  }
 
-
+  productDetails(productId) {
+    this.router.navigate(['/pages/productdetails', productId ]);
   }
 
 }
