@@ -15,11 +15,12 @@ export class SearchService {
 
   }
 
-  searchItem(keyword) {
+  searchItem(keyword, selectedCategories?) {
     const httpHeaders = new HttpHeaders()
       .set('Content-Type', 'application/json');
     const httpParams = new HttpParams()
-      .set('searchKey', keyword);
+      .set('searchKey', keyword)
+      .set('categories', selectedCategories);
      return this.http.get(this.globalShared['serverpath'] + 'searchItem', {
        headers: httpHeaders,
        params: httpParams,

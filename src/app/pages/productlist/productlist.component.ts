@@ -4,6 +4,7 @@ import { StateService } from '../../../app/@core/data/state.service';
 import { ProductListService} from '../productlist/productlist.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { Subscription } from 'rxjs/Subscription';
+import { GlobalShared } from '../../app.global';
 
 @Component({
   selector: 'ngx-productlist',
@@ -25,6 +26,7 @@ export class ProductlistComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private productListService: ProductListService,
+              public globalShared: GlobalShared,
               private stateService: StateService ) {
     this.stateService.setSidebarState(this.stateService.sidebars[0]);
 

@@ -2,10 +2,20 @@
 <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12">
 <nb-card>
   <div class="btn-group btn-group-toggle btn-group-full-width" data-toggle="buttons" >
-        <label *ngFor="let c of choice; let i of index" ngbButtonLabel class="btn btn-primary" [class.active]="productType[c]">
-          <input ngbButton type="checkbox" [(ngModel)]="productType[c]" (click)="filterProducts(productType)"> {{c}}
-        </label>
+        <!--<label *ngFor="let c of choice; let i of index" ngbButtonLabel class="btn btn-primary" [class.active]="productType[c]">-->
+          <!--<input ngbButton type="checkbox" [(ngModel)]=" productType[c]" (click)="filterProducts(productType)"> {{c}}-->
+        <!--</label>-->
+
+    <label ngbButtonLabel class="btn btn-primary"*ngFor="let key of objectKeys(productType)" [class.active]="productType[key]">
+      <input ngbButton type="checkbox" [(ngModel)]="productType[key]" (change)="filterProducts($event, key)"> {{key}}
+    </label>
   </div>
+
+  <!--<div *ngFor="let key of keys">-->
+    <!--<div>-->
+      <!--{{key}}-->
+    <!--</div>-->
+  <!--</div>-->
 
 </nb-card>
 
@@ -14,7 +24,7 @@
     <nb-card-header class="color bg-info"><h3>{{searchkey}}</h3></nb-card-header>
     <nb-card-body>
       <h5>{{errorMessage}}</h5>
-      <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12">
+      <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12" *ngIf="!errorMessage">
         <div class="display-flex">
           <!--<ul>-->
             <!--<li *ngFor="let p of products['motherboard']">{{p}}</li>-->
