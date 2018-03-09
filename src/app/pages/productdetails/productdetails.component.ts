@@ -81,22 +81,21 @@ export class ProductdetailsComponent implements OnInit {
   }
 
   showimage(index): void {
-   // this.image = '';
+   let image = '';
     let keepGoing = true;
 
-    this.productimages.forEach(function (val, key) {
-
+    this.product['productimages'].forEach(function (val, key) {
       if (keepGoing) {
         if (key === index ) {
       //    console.log(val.toString());
-          this.image = val.toString();
-
+          image = val;
           keepGoing = false;
         }
       }
 
-    })
-
+   })
+    this.product['image'] = image;
+  //  console.log(image);
   }
 
   public carouselTileLoad(evt: any) {
