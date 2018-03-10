@@ -41,7 +41,7 @@ export class DashboardComponent implements OnInit {
     //  this.spinnerService.hide();
       this.isRunning = false;
       // console.log(window.location.href);
-      // console.log(globalShared);
+       console.log(globalShared);
     });
 
   }
