@@ -7,10 +7,12 @@
     {
       "root": "src",
       "outDir": "dist",
+      "serviceWorker": true,
       "assets": [
         "assets",
         "favicon.ico",
         "favicon.png",
+        "manifest.json",
         {
           "glob": "**/*",
           "input": "../node_modules/leaflet/dist/images",

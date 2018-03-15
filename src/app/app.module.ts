@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule  } from '@angular/core';
 import { HttpModule, RequestOptions, XHRBackend } from '@angular/http';
 import { CoreModule } from './@core/core.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +36,7 @@ import { GlobalShared } from './app.global';
     HttpModule,
     AppRoutingModule,
     HttpClientModule,
+    environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : [],
 
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
