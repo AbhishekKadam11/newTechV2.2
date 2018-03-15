@@ -94,7 +94,7 @@
 <nb-card>
   <nb-card-header class=""><h4>Product information</h4> </nb-card-header>
   <nb-card-body>
-    <div class="row">
+    <div class="row ml10">
       <div class="lm10" [innerHTML]="product['fulldescription']">
       </div>
     </div>
@@ -104,7 +104,8 @@
 <nb-card>
   <nb-card-header class=""><h4>Customer review</h4> </nb-card-header>
   <nb-card-body>
-    <div class="row">
+    <div class="row ml10" >
+      <button class="btn btn-warning btn-demo" (click)="checkLogin()">Write a review</button>
     </div>
   </nb-card-body>
 </nb-card>

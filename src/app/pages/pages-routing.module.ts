@@ -46,6 +46,9 @@ const routes: Routes = [{
       path: 'searchresult/:searchkey',
       loadChildren: './searchresult/searchresult.module#SearchresultModule',
     }, {
+      path: 'review',
+      loadChildren: './productreview/productreview.module#ProductreviewModule',
+    }, {
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full',

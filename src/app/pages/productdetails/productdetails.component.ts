@@ -117,6 +117,15 @@ export class ProductdetailsComponent implements OnInit {
     this.cartService.addProduct(this.product);
   }
 
+  //-----product review-----
+
+  checkLogin() {
+    if(localStorage.getItem('auth_token')) {
+      this.router.navigate(['/pages/review']);
+    } else {
+      this.router.navigate(['/auth/login']);
+    }
+  }
 
 
 }
