@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
+var compression = require('compression');
 // Run the app by serving the static files
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
+app.use(compression()); //compressing dist folder
 // Start the app by listening on the default
 // var WORKERS = process.env.WEB_CONCURRENCY || 1;
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart/cart.service';
 import { CheckoutService } from './checkout.service'
 import { Router } from '@angular/router';
+import { GlobalShared } from '../../app.global';
 
 @Component({
   selector: 'ngx-checkout',
@@ -17,7 +18,7 @@ export class CheckoutComponent implements OnInit {
   isEmpty: boolean = true;
 
   constructor(private  cartservice: CartService, private checkoutservice: CheckoutService,
-              private router: Router) {
+              private router: Router, public globalShared: GlobalShared) {
 
   }
 
