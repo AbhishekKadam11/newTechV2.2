@@ -46,14 +46,14 @@
     <div class="row">
       <ngb-rating [(rate)]="starRate" max=5 [readonly]="true">
         <ng-template let-fill="fill">
-              <span class="star fill text-warning" [class.filled]="fill === 100">
+              <span class="star fill text-warning" [class.filled]="fill === 100" style="font-size: 1.2rem">
                 <i class="ion-android-star" *ngIf="fill === 100"></i>
                 <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
               </span>
         </ng-template>
       </ngb-rating>
 
-      <span style="margin: 5px"> customer review</span>
+      <span style="margin-left: 5px;"> customer review</span>
       <!--<span class="current-rate">{{ starRate }}</span>-->
     </div>
     <hr style="margin-left: -15px">
@@ -106,6 +106,43 @@
   <nb-card-body>
     <div class="row ml10" >
       <button class="btn btn-warning btn-demo" (click)="checkLogin()">Write a review</button>
+    </div>
+    <div class="row mlr10 mt10" >
+
+      <nb-card style="width: 100% !important;">
+        <!--<nb-tabset fullWidth>-->
+          <!--<nb-tab tabTitle="Contacts">-->
+            <!--<div class="contact" *ngFor="let c of contacts">-->
+              <!--<nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nb-user>-->
+              <!--<i class="i-contact nb-phone"></i>-->
+            <!--</div>-->
+          <!--</nb-tab>-->
+          <!--<nb-tab tabTitle="Recent">-->
+            <!--<div class="contact" *ngFor="let c of recent">-->
+              <!--<nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="large"></nb-user>-->
+              <!--<span class="time">{{ c.time }}</span>-->
+            <!--</div>-->
+        <div class="col-xxxl-6 col-xxl-6 col-lg-6 col-md-12">
+        <div class="contact mt10" *ngFor="let c of productReview">
+          <nb-user [name]="c.name"  ></nb-user>
+          <ngb-rating [(rate)]="c.starRate" max=5 [readonly]="true" class="mt5">
+            <ng-template let-fill="fill">
+                  <span class="star fill text-warning" [class.filled]="fill === 100">
+                    <i class="ion-android-star" *ngIf="fill === 100"></i>
+                    <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
+                  </span>
+            </ng-template>
+          </ngb-rating>
+          <span class="time">{{ c.postDate | date:'d LLLL yyyy' }}</span>
+          <hr>
+          <p class="mt5">{{ c.comment }}</p>
+        </div>
+        </div>
+
+          <!--</nb-tab>-->
+        <!--</nb-tabset>-->
+      </nb-card>
+
     </div>
   </nb-card-body>
 </nb-card>

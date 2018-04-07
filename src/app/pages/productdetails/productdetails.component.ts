@@ -17,6 +17,7 @@ export class ProductdetailsComponent implements OnInit {
 
   productid: string;
   product: any= {};
+  productReview: any= {};
   starRate: number = 4;
   brand;
   title;
@@ -29,6 +30,7 @@ export class ProductdetailsComponent implements OnInit {
   productData;
   public carouselTileItems: Array<any>;
   public carouselTile: NgxCarousel;
+  recent: any= {};
 
   constructor(private route: ActivatedRoute, private router: Router,
               private productdetailsaervice: ProductDetailsService,
@@ -78,6 +80,22 @@ export class ProductdetailsComponent implements OnInit {
       console.log(err);
     });
 
+    this.productdetailsaervice.customerReviewData(this.productid).subscribe((result) => {
+      this.productReview = result;
+      this.productStartRate(result);
+    }, (err) => {
+      console.log(err);
+    });
+
+  }
+
+  productStartRate(data:any) {
+    let rating: number = 0;
+    data.forEach(val =>{
+      rating += val['starRate'];
+    })
+    this.starRate = (rating/data.length);
+  //  console.log(this.starRate);
   }
 
   showimage(index): void {
@@ -120,8 +138,8 @@ export class ProductdetailsComponent implements OnInit {
   //-----product review-----
 
   checkLogin() {
-    if(localStorage.getItem('auth_token')) {
-      this.router.navigate(['/pages/review']);
+    if (localStorage.getItem('auth_token')) {
+      this.router.navigate(['/pages/review', this.productid]);
     } else {
       this.router.navigate(['/auth/login']);
     }

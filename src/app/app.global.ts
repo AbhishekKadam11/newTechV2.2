@@ -9,4 +9,5 @@ export class GlobalShared {
   //   'http://localhost:8080/api/';
   urlpath: string = 'https://newtechserver.herokuapp.com/uploads/';
   serverpath: string = 'https://newtechserver.herokuapp.com/api/';
+  defaultimage: string = 'assets/images/default-placeholder.png'; // '../assets/images/default-placeholder.png'
 }

@@ -18,15 +18,9 @@ const routes: Routes = [{
     }, {
       path: 'components',
       loadChildren: './components/components.module#ComponentsModule',
-    }, {
-      path: 'maps',
-      loadChildren: './maps/maps.module#MapsModule',
     },  {
       path: 'forms',
       loadChildren: './forms/forms.module#FormsModule',
-    }, {
-      path: 'tables',
-      loadChildren: './tables/tables.module#TablesModule',
     }, {
       path: 'profile',
       loadChildren: 'app/pages/profile/profile.module#ProfileModule',
@@ -46,7 +40,7 @@ const routes: Routes = [{
       path: 'searchresult/:searchkey',
       loadChildren: './searchresult/searchresult.module#SearchresultModule',
     }, {
-      path: 'review',
+      path: 'review/:productId',
       loadChildren: './productreview/productreview.module#ProductreviewModule',
     }, {
       path: '',

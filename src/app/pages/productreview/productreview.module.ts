@@ -3,17 +3,21 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { ProductreviewRoutingModule, routedComponents } from './productreview-routing.module';
 import { ProductreviewService } from './productreview.service';
 // import { SidebarComponent } from '../sidebar/sidebar.component';
+import { ProductDetailsService } from '../productdetails/productdetails.service';
+// import { CKEditorModule } from 'ng2-ckeditor';
 
 
 @NgModule({
   imports: [
     ThemeModule,
+    // CKEditorModule,
     ProductreviewRoutingModule,
   ],
   declarations: [
     ...routedComponents,
   ],
-  providers: [ProductreviewService],
+  providers: [ProductreviewService,
+              ProductDetailsService],
 
 })
 export class ProductreviewModule { }

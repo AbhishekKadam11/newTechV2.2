@@ -1,32 +1,53 @@
 import {Injectable} from '@angular/core';
-import {Http, Headers, URLSearchParams, RequestOptions} from '@angular/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {GlobalShared} from '../../app.global';
+// import {HttpHeaders, HttpParams} from "@angular/common/http";
 
 
 @Injectable()
 export class ProductDetailsService {
-  constructor(private http: Http, private globalShared: GlobalShared) {
+  constructor(private http: HttpClient, private globalShared: GlobalShared) {
 
   }
 
   productDescriptionData(pid) {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-
+    // const headers = new Headers();
+    // headers.append('Content-Type', 'application/json');
+    const httpHeaders = new HttpHeaders()
+      .set('Content-Type', 'application/json');
+    const httpParams = new HttpParams()
+      .set('pid', pid);
     return this.http
       .get(
-        this.globalShared['serverpath'] + 'productDescriptionData/' + pid,
+        this.globalShared['serverpath'] + 'productDescriptionData/',
         //'https://newtechserver.herokuapp.com/api/productDescriptionData/' + pid,
-        {headers},
-      )
-      .map(res => res.json())
+        {
+          headers: httpHeaders,
+          params: httpParams,
+          responseType: 'json',
+        })
       .map((res) => {
-        if (res.success) {
-          return res.success;
-        } else {
-          return res;
-        }
+        return res;
+      }, (err) => {
+        return err;
+      });
+  }
 
+  customerReviewData(productId) {
+    const httpHeaders = new HttpHeaders()
+      .set('Content-Type', 'application/json');
+    const httpParams = new HttpParams()
+      .set('productId', productId);
+    return this.http.get(this.globalShared['serverpath'] + 'productReview',
+      {
+      headers: httpHeaders,
+      params: httpParams,
+      responseType: 'json',
+    })
+      .map((res) => {
+        return res;
+      }, (err) => {
+        return err;
       });
   }
 
