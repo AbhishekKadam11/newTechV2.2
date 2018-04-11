@@ -5,12 +5,12 @@ import { ProductreviewService } from './productreview.service';
 // import { SidebarComponent } from '../sidebar/sidebar.component';
 import { ProductDetailsService } from '../productdetails/productdetails.service';
 // import { CKEditorModule } from 'ng2-ckeditor';
-
+import { ImgFallbackModule } from 'ngx-img-fallback';
 
 @NgModule({
   imports: [
     ThemeModule,
-    // CKEditorModule,
+    ImgFallbackModule,
     ProductreviewRoutingModule,
   ],
   declarations: [

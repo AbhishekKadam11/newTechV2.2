@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {GlobalShared} from '../../app.global';
-
+import {UserService} from '../login/user.service';
 
 @Injectable()
 export class RegisterService {
@@ -10,7 +10,8 @@ export class RegisterService {
   public userId: string;
   public basicdata: string;
 
-  constructor(private http: HttpClient, private globalShared: GlobalShared) {
+  constructor(private http: HttpClient, private globalShared: GlobalShared,
+    private userService: UserService) {
 
   }
   
@@ -40,22 +41,22 @@ export class RegisterService {
        //      this.authtoken.createAuthorizationHeader(res.token);
           var headers = new Headers({'Authorization': res['token']});
           var loggedIn = true;
-          this.setProfileData(res);
+          this.userService.setProfileData(res);
           return res;
       }, (err) => {
         return err;
       });
   }
 
-  setProfileData(data) {
-    this.profileName = data.profilename;
-    // this.userId = data.token;
-    this.basicdata = data;
-    this.getProfileData();
-  }
+  // setProfileData(data) {
+  //   this.profileName = data.profilename;
+  //   // this.userId = data.token;
+  //   this.basicdata = data;
+  //   this.getProfileData();
+  // }
 
-  public getProfileData() {
-    return this.basicdata;
-  }
+  // public getProfileData() {
+  //   return this.basicdata;
+  // }
 
 }

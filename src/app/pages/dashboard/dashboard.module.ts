@@ -26,13 +26,15 @@ import 'hammerjs';
 
 
 import { CarouselComponent } from './carousel/carousel.component';
-import { DashboardService } from './dashboard.service'
+import { DashboardService } from './dashboard.service';
+import { ImgFallbackModule } from 'ngx-img-fallback';
 
 @NgModule({
   imports: [
     ThemeModule,
     // AngularEchartsModule,
     NgxCarouselModule,
+    ImgFallbackModule,
     // Ng4LoadingSpinnerModule,
 
   ],

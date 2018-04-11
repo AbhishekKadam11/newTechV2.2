@@ -23,8 +23,7 @@ export class ProductDetailsService {
         //'https://newtechserver.herokuapp.com/api/productDescriptionData/' + pid,
         {
           headers: httpHeaders,
-          params: httpParams,
-          responseType: 'json',
+          params: httpParams
         })
       .map((res) => {
         return res;

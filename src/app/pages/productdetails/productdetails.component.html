@@ -8,7 +8,11 @@
     <div class="row">
 
       <div class="mx-auto d-block">
-        <img [src]="globalShared['urlpath']+product['image']" class="img" >
+        <!-- <img [src]="globalShared['urlpath']+product['image1']"  -->
+        <img 
+        [src]="globalShared['urlpath']+product['image']" 
+        src-fallback="{{globalShared['defaultimage']}}"
+        class="img" >
       </div>
 
     </div>
@@ -19,8 +23,7 @@
           [inputs]="carouselTile" (carouselLoad)="carouselTileLoad($event)">
           <ngx-tile NgxCarouselItem *ngFor="let slide of product['productimages'];let i = index">
             <a (click)="showimage(i)">
-              <img [src]="globalShared['urlpath']+slide" class="thumbnail mx-auto d-block">
-
+              <img [src]="globalShared['urlpath']+slide"  src-fallback="{{globalShared['defaultimage']}}" class="thumbnail mx-auto d-block">
             </a>
           </ngx-tile>
           <a class="right carousel-control-prev" NgxCarouselPrev role="button">

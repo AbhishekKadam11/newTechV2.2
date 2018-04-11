@@ -41,7 +41,7 @@
 <div class="row" style="margin-top: 10px">
   <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-sm-12 col-is-10">
     <nb-card>
-      <nb-card-header class="color bg-info"><h3>Motherboard</h3> </nb-card-header>
+      <nb-card-header class="color bg-info headerpad"><h4><strong>Motherboard</strong></h4> </nb-card-header>
       <nb-card-body>
         <div class="ngspinner" *ngIf="isRunning">
           <div class="rect1"></div>
@@ -56,7 +56,7 @@
             (carouselLoad)="carouselTileLoad($event)">
             <ngx-tile NgxCarouselItem *ngFor="let slide of motherboard">
               <a (click)="productDetails(slide['data']['_id'])">
-              <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+              <img [src]="globalShared['urlpath']+slide['image']"  src-fallback="{{globalShared['defaultimage']}}" class="thumbnail mx-auto d-block">
               <blockquote class="blockquote">
               <p class="mb-0" >{{slide['data']['title']}} </p>
               </blockquote>
@@ -92,7 +92,7 @@
 <div class="row" style="margin-top: 10px">
   <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-is-10">
     <nb-card>
-      <nb-card-header class="color bg-info"><h3>Processor</h3> </nb-card-header>
+        <nb-card-header class="color bg-info headerpad"><h4><strong>Processor</strong></h4> </nb-card-header>
       <nb-card-body>
         <!--<div class="ngspinner" *ngIf="isRunning">-->
           <!--<div class="rect1"></div>-->
@@ -108,7 +108,7 @@
             (carouselLoad)="carouselTileLoad($event)">
             <ngx-tile NgxCarouselItem *ngFor="let slide of processor">
               <a (click)="productDetails(slide['data']['_id'])">
-                <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+                <img [src]="globalShared['urlpath']+slide['image']"  src-fallback="{{globalShared['defaultimage']}}" class="thumbnail mx-auto d-block">
                 <blockquote class="blockquote">
                   <p class="mb-0" >{{slide['data']['title']}} </p>
                 </blockquote>
@@ -143,7 +143,7 @@
 <div class="row" style="margin-top: 10px">
   <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-is-10">
     <nb-card>
-      <nb-card-header class="color bg-info"><h3>Graphic Card</h3> </nb-card-header>
+        <nb-card-header class="color bg-info headerpad"><h4><strong>Graphic Card</strong></h4> </nb-card-header>
       <nb-card-body>
         <!--<div class="ngspinner" *ngIf="isRunning">-->
           <!--<div class="rect1"></div>-->
@@ -158,7 +158,7 @@
             (carouselLoad)="carouselTileLoad($event)">
             <ngx-tile NgxCarouselItem *ngFor="let slide of graphiccard">
               <a (click)="productDetails(slide['data']['_id'])">
-                <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+                <img [src]="globalShared['urlpath']+slide['image']"  src-fallback="{{globalShared['defaultimage']}}" class="thumbnail mx-auto d-block">
                 <blockquote class="blockquote">
                   <p class="mb-0" >{{slide['data']['title']}} </p>
                 </blockquote>
@@ -182,7 +182,7 @@
 <div class="row" style="margin-top: 10px">
   <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12 col-is-10">
     <nb-card>
-      <nb-card-header class="color bg-info"><h3>Router</h3> </nb-card-header>
+      <nb-card-header class="color bg-info headerpad"><h4><strong>Router</strong></h4> </nb-card-header>
       <nb-card-body>
         <!--<div class="ngspinner" *ngIf="isRunning">-->
           <!--<div class="rect1"></div>-->
@@ -197,7 +197,7 @@
             (carouselLoad)="carouselTileLoad($event)">
             <ngx-tile NgxCarouselItem *ngFor="let slide of routers">
               <a (click)="productDetails(slide['data']['_id'])">
-                <img [src]="globalShared['urlpath']+slide['image']" class="thumbnail mx-auto d-block">
+                <img [src]="globalShared['urlpath']+slide['image']"  src-fallback="{{globalShared['defaultimage']}}" class="thumbnail mx-auto d-block">
                 <blockquote class="blockquote">
                   <p class="mb-0" >{{slide['data']['title']}} </p>
                 </blockquote>

@@ -6,11 +6,13 @@ import { SearchService } from './searchresult.service';
 // import { NgUploaderModule } from 'ngx-uploader';
 // import { FancyImageUploaderModule } from 'ng2-fancy-image-uploader';
 // import { SidebarComponent } from '../sidebar/sidebar.component';
+import { ImgFallbackModule } from 'ngx-img-fallback';
 
 @NgModule({
   imports: [
     ThemeModule,
     SearchresultRoutingModule,
+    ImgFallbackModule,
   //  NgUploaderModule,
    // FancyImageUploaderModule,
   ],

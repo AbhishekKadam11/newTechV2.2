@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectorRef, Input, Directive, HostBinding } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ProductDetailsService } from './productdetails.service'
@@ -13,6 +13,7 @@ import { GlobalShared } from '../../app.global';
   templateUrl: './productdetails.component.html',
   styleUrls: ['./productdetails.component.scss'],
 })
+
 export class ProductdetailsComponent implements OnInit {
 
   productid: string;
@@ -31,6 +32,8 @@ export class ProductdetailsComponent implements OnInit {
   public carouselTileItems: Array<any>;
   public carouselTile: NgxCarousel;
   recent: any= {};
+  // defaultimage: string;
+  // placeholder = 'assets/images/default-placeholder.png';
 
   constructor(private route: ActivatedRoute, private router: Router,
               private productdetailsaervice: ProductDetailsService,

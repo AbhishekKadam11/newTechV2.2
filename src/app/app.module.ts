@@ -22,6 +22,7 @@ import { UserService } from './pages/login/user.service';
 import { HttpClient } from './app.httpclient';
 import { HttpClientModule } from '@angular/common/http';
 
+// import { ImgFallbackModule } from 'ngx-img-fallback';
 // import { NgxCarouselModule } from 'ngx-carousel';
 // import 'hammerjs';
 // import { PlusSpinnerModule } from 'plus-spinner';
@@ -36,6 +37,7 @@ import { GlobalShared } from './app.global';
     HttpModule,
     AppRoutingModule,
     HttpClientModule,
+    // ImgFallbackModule,
     environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : [],
 
     NgbModule.forRoot(),

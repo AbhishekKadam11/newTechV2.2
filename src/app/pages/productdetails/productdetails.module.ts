@@ -8,12 +8,13 @@ import { ProductDetailsService } from './productdetails.service';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
-
+import { ImgFallbackModule } from 'ngx-img-fallback';
 @NgModule({
   imports: [
     ThemeModule,
     ProductRoutingModule,
     NgxCarouselModule,
+    ImgFallbackModule,
     // CKEditorModule,
     ImageUploadModule.forRoot(),
     NgxMyDatePickerModule.forRoot(),
