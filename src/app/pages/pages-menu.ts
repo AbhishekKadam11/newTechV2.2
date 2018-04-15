@@ -103,10 +103,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'TinyMCE',
         link: '/pages/editors/tinymce',
       },
-      {
-        title: 'CKEditor',
-        link: '/pages/editors/ckeditor',
-      },
+      // {
+      //   title: 'CKEditor',
+      //   link: '/pages/editors/ckeditor',
+      // },
     ],
   },
   {
