@@ -85,6 +85,7 @@ export class ProductdetailsComponent implements OnInit {
 
     this.productdetailsaervice.customerReviewData(this.productid).subscribe((result) => {
       this.productReview = result;
+    //  console.log(result);
       this.productStartRate(result);
     }, (err) => {
       console.log(err);

@@ -1,13 +1,9 @@
 import { Component, Input, OnInit, EventEmitter, ViewChild } from '@angular/core';
-
 import { NbMenuService, NbSidebarService, NbSearchService } from '@nebular/theme';
-// import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 import { Router } from '@angular/router';
-
-// import { NbSearchService } from './search.service';
-
-import {UserService} from '../../../pages/login/user.service';
+import { UserService } from '../../../pages/login/user.service';
+import { GlobalShared } from '../../../../app/app.global';
 
 @Component({
   selector: 'ngx-header',
@@ -22,6 +18,7 @@ export class HeaderComponent implements OnInit {
   user: any;
   public logged: boolean = false;
   public profileName: string;
+  public profilePic: string;
   public userId: string;
   public hidebttn: boolean = false;
   menuClick: EventEmitter<NbMenuService>;
@@ -33,6 +30,7 @@ export class HeaderComponent implements OnInit {
               private menuService: NbMenuService,
               private analyticsService: AnalyticsService,
               private router: Router,
+              public globalShared: GlobalShared,
               private userService: UserService,
               private searchService: NbSearchService) {
   }
@@ -43,6 +41,7 @@ export class HeaderComponent implements OnInit {
     if ( this.userService.profileName ) {
       this.logged = this.userService.loggedIn;
       this.profileName = this.userService.profileName;
+      this.profilePic = this.userService.basicdata['profilePic'];
       this.userId = this.userService.userId;
       this.hidebttn = true;
     }

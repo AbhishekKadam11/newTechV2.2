@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
 import { ProfileRoutingModule, routedComponents } from './profile-routing.module';
 import { ProfileService } from './profile.service';
-import { NgUploaderModule } from 'ngx-uploader';
+import { FileUploadModule } from 'ng2-file-upload';
 //import { FancyImageUploaderModule } from 'ng2-fancy-image-uploader';
 
 
@@ -11,7 +11,7 @@ import { NgUploaderModule } from 'ngx-uploader';
   imports: [
     ThemeModule,
     ProfileRoutingModule,
-    NgUploaderModule,
+    FileUploadModule,
    // FancyImageUploaderModule,
   ],
   declarations: [

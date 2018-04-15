@@ -44,8 +44,7 @@
     <div  [hidden]="!hidebttn" >
     <!--<button [nbContextMenu]="userMenu"></button> -->
       <div class="dropdown ghost-dropdown" ngbDropdown>
-
-      <nb-user class="dropdown-toggle" ngbDropdownToggle   [name]="profileName" [picture]="user?.picture"></nb-user>
+      <nb-user class="dropdown-toggle" ngbDropdownToggle [name]="profileName" [picture]="profilePic ? globalShared['urlpath']+profilePic : false"></nb-user>
         <!--<ul class="dropdown-menu" ngbDropdownMenu>-->
           <!--<li *ngFor="let menu of userMenu" class=" ">{{menu.title}}</li>-->
 

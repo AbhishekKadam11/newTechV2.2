@@ -20,8 +20,8 @@
       <div class="mx-auto d-block">
 
         <ngx-carousel
-          [inputs]="carouselTile" (carouselLoad)="carouselTileLoad($event)">
-          <ngx-tile NgxCarouselItem *ngFor="let slide of product['productimages'];let i = index">
+          [inputs]="carouselTile" (carouselLoad)="carouselTileLoad($event)" >
+          <ngx-tile NgxCarouselItem *ngFor="let slide of product['productimages'];let i = index" style="width: auto !important;">
             <a (click)="showimage(i)">
               <img [src]="globalShared['urlpath']+slide"  src-fallback="{{globalShared['defaultimage']}}" class="thumbnail mx-auto d-block">
             </a>
@@ -127,7 +127,7 @@
             <!--</div>-->
         <div class="col-xxxl-6 col-xxl-6 col-lg-6 col-md-12">
         <div class="contact mt10" *ngFor="let c of productReview">
-          <nb-user [name]="c.name"  ></nb-user>
+          <nb-user [name]="c.name" [picture]="c['profilePic'] ? globalShared['urlpath']+c['profilePic'] : false"></nb-user>
           <ngb-rating [(rate)]="c.starRate" max=5 [readonly]="true" class="mt5">
             <ng-template let-fill="fill">
                   <span class="star fill text-warning" [class.filled]="fill === 100">

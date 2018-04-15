@@ -25,7 +25,7 @@ export class UserService {
       .post(
       //  'https://newtechserver.herokuapp.com/api/authenticate',
         this.globalShared['serverpath'] + 'authenticate',
-        JSON.stringify({name: values.email, password: values.password}),
+        JSON.stringify({email: values.email, password: values.password}),
         {headers}
       )
       .map(res => res.json())
@@ -38,6 +38,8 @@ export class UserService {
           this.setProfileData(res);
         }
         return res;
+      }, (err) => {
+        return err;
       })
   }
 

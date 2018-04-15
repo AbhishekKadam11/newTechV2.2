@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   public email: AbstractControl;
   public password: AbstractControl;
   public submitted: boolean = false;
+  public message: string;
 
   constructor(fb: FormBuilder, private userService: UserService, private router: Router) {
     this.form = fb.group({
@@ -31,11 +32,25 @@ export class LoginComponent implements OnInit {
 
   public onSubmit(values: Object): void {
     this.submitted = true;
+    console.log(values); 
     if (this.form.valid) {
       this.userService.login(values).subscribe((result) => {
+        console.log(result); 
         if (result.success) {
           this.router.navigate(['/pages/dashboard']);
+        } else {
+          this.message = result.msg;
+          setTimeout(() => {
+            this.message = '';
+          },3000);
+      
         }
+      }, (error)=>{
+         console.log(error); 
+        setTimeout(() => {
+          delete this.message;
+        },3000);
+    
       });
     }
   }
