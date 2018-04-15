@@ -1,4 +1,4 @@
-import { Component, EventEmitter , OnInit, ViewEncapsulation, Input, Output } from '@angular/core';
+import { Component, EventEmitter , OnInit, ViewEncapsulation } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 import { ProfileService } from './profile.service'
 import { GlobalShared } from '../../app.global';
@@ -13,17 +13,11 @@ export class ProfileComponent implements OnInit {
 
   public uploader: FileUploader;
   private hasDragOver = false;
-
- // @Input()
   private editmode = true;
-
-  // @Input()
-  private url = '';
-
+  public url = '';
   public profile:any = {};  // model
   savedSuccess: boolean = false;
   saveUnsuccess: boolean = false;
-
   formData: FormData;
 
   constructor(private profileService: ProfileService, private globalShared: GlobalShared) {
@@ -70,6 +64,5 @@ export class ProfileComponent implements OnInit {
         }, 3000);
       });
   }
-
 
 }
