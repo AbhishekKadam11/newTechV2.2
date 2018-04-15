@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
 
   public uploader: FileUploader;
   private hasDragOver = false;
-  private editmode = true;
+  public editmode = true;
   public url = '';
   public profile:any = {};  // model
   savedSuccess: boolean = false;
