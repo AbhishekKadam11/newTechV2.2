@@ -82,7 +82,7 @@ export class ProductComponent implements OnInit {
       this.product['arrivaldate'] = this.product.arrivaldate;
     }
   //  console.log(this.product);
-    this.productService.newProductAdd(this.product) .subscribe((result) => {
+    this.productService.newProductAdd(this.product).subscribe((result) => {
       this.savedSuccess = true;
       setTimeout(() => {
         console.log(result);

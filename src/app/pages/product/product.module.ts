@@ -5,7 +5,7 @@ import { ImageUploadModule } from 'angular2-image-upload';
 import { ProductRoutingModule, routedComponents } from './product-routing.module';
 import { ProductService } from './product.service';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
-// import { NgSimpleSelectModule } from 'ng5-simple-select';
+import { NgSimpleSelectModule } from 'ng5-simple-select';
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
     ImageUploadModule.forRoot(),
     NgxMyDatePickerModule.forRoot(),
     CKEditorModule,
-  //  NgSimpleSelectModule,
+    NgSimpleSelectModule,
 
   ],
   declarations: [
