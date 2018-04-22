@@ -4,10 +4,6 @@
   "description": "An e-commerce application",
   "icons": [
     {
-      "src":"/assets/icons/apple-touch-icon.png",
-      "type":"image/png"
-    },
-    {
       "src":"/assets/icons/favicon-16x16.png",
       "sizes":"16x16",
       "type":"image/png"
@@ -18,23 +14,23 @@
       "type":"image/png"
     },
     {
-      "src":"/assets/icons/mstile-150x150.png",
-      "sizes":"150x150",
+      "src":"/assets/icons/ms-icon-70x70.png",
+      "sizes":"70x70",
       "type":"image/png"
     },
     {
-      "src":"/assets/icons/android-chrome-384x384.png",
-      "sizes":"384x384",
+      "src":"/assets/icons/ms-icon-144x144.png",
+      "sizes":"144x144",
       "type":"image/png"
     },
     {
-      "src": "/assets/icons/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/assets/icons/ms-icon-150x150.png",
+      "sizes": "150x150",
       "type": "image/png"
     },
     {
-      "src":"/assets/icons/android-chrome-192x192.png",
-      "sizes":"192x912",
+      "src":"/assets/icons/ms-icon-310x310.png",
+      "sizes":"310x310",
       "type":"image/png"
     }
   ],
