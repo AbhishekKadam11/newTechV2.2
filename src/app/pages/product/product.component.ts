@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {INgxMyDpOptions, IMyDateModel} from 'ngx-mydatepicker';
 import {FileHolder} from '../../../../node_modules/angular2-image-upload/lib/image-upload/image-upload.component';
-import './ckeditor.loader';
-import 'ckeditor';
+// import './ckeditor.loader';
+// import 'ckeditor';
 
 import {ProductService} from './product.service'
 
