@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   public carouselTileItems: Array<any>;
   public carouselTile: NgxCarousel;
 
-  constructor(private dashboardService: DashboardService, private globalShared: GlobalShared,
+  constructor(private dashboardService: DashboardService, public globalShared: GlobalShared,
               private router: Router, private stateService: StateService) {
 
     this.stateService.setSidebarState(this.stateService.sidebars[2]);
