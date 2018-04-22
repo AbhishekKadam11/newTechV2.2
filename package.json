@@ -8,7 +8,7 @@
     "start:hmr": "ng serve --hmr",
     "start:aot": "ng serve --aot",
     "build": "rimraf dist && ng build --prod --build-optimizer",
-    "build:prod": "npm run build -- --prod --build-optimizer",
+    "build:prod": "node --stack_size=4048 node_modules/.bin/ng build --prod",
     "build:prod:aot": "npm run build:prod -- --aot",
     "build:ci": "npm-run-all -p -r build:prod build:prod:aot",
     "test": "ng test -sr",
