@@ -78,7 +78,7 @@
     }
 
     .control-item {
-      display: none;
+      // display: none;
     }
 
     .toggle-layout {
@@ -89,15 +89,51 @@
   @include media-breakpoint-down(sm) {
 
     nb-user /deep/ .user-name {
-      display: none;
+      // display: none;
     }
   }
+
+  // @media only screen and (max-width: 400px) and (min-width: 350px) {
+
+  //   .header-container {
+  //     // .logo {
+  //     //   font-size: 1.25rem;
+  //     // }
+  //     font-size: 0.75rem !important;
+  //     .navigation {
+  //       padding-left: nb-theme(padding);
+  //       // font-size: 1.25rem !important;
+  //       // text-decoration: none;
+  
+  //       i {
+  //         display: block;
+  //       }
+  //     }
+  //   }
+
+  //   .toggle-layout {
+  //     display: none;
+  //   }
+
+  //   nb-action:not(.toggle-layout) {
+  //     padding: 0;
+  //   }
+  // }
 
   @include media-breakpoint-down(is) {
 
     .header-container {
       .logo {
         font-size: 1.25rem;
+      }
+      .navigation {
+        padding-left: nb-theme(padding);
+        font-size: 1.25rem !important;
+        text-decoration: none;
+  
+        i {
+          display: block;
+        }
       }
     }
 
@@ -112,7 +148,8 @@
 
   @include media-breakpoint-down(xs) {
     .right /deep/ {
-      display: none;
+      font-size: 0.9rem !important;
+      // display: none;
     }
   }
 }
