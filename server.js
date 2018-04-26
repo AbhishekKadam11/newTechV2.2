@@ -1,14 +1,10 @@
 var express = require('express');
 var app = express();
 var compression = require('compression');
+var sslRedirect = require('heroku-ssl-redirect');
 
 // to redirect http traffic to https
-app.get('*',function(req,res,next){
-  if(req.headers['x-forwarded-proto']!='https')
-    res.redirect('https://newtech2.herokuapp.com'+req.url)
-  else
-    next() /* Continue to other routes if we're not redirecting */
-})
+app.use(sslRedirect());
 
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
