@@ -25,3 +25,12 @@ $nb-themes: nb-register-theme((
   font-main: Roboto,
   font-secondary: Exo,
 ), cosmic, cosmic);
+.app-loading {
+  .logo {
+    width: 100px;
+    height: 100px;
+    
+    // this way asset gets processed by webpack 
+    background: url(/assets/icons/ms-icon-144x144.png) center center no-repeat; 
+  }
+}
