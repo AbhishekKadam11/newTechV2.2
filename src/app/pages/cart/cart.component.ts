@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 // import { Observable } from 'rxjs';
 import { Subscription } from 'rxjs/Subscription';
 import { CartService } from './cart.service'

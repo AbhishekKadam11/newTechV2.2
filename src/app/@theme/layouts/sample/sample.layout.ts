@@ -51,13 +51,7 @@ import 'rxjs/add/operator/delay';
         <!--<ngx-footer></ngx-footer>-->
       <!--</nb-layout-footer>-->
 
-      <nb-sidebar class="settings-sidebar"
-                   tag="settings-sidebar"
-                   state="collapsed"
-                   fixed
-                   [right]="true">
-        <ngx-theme-settings></ngx-theme-settings>
-      </nb-sidebar>
+     
     </nb-layout>
   `,
 })

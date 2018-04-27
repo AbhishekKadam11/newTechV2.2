@@ -19,10 +19,6 @@
 <script>
 
 </script>
-  <ngx-app>Loading...</ngx-app>
-<noscript>
-  This app works with Javascript being enabled. Enable Javascript in Browser and try again!
-</noscript>
 <style type="text/css">
   body, html {
     height: 100%;
@@ -74,12 +70,19 @@
     }
   }
 </style>
+  <ngx-app>
+    <div class="app-loading">
+      <div class="logo"></div>
+      <svg class="spinner" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
+    </div>
+  </ngx-app>
+<noscript>
+  This app works with Javascript being enabled. Enable Javascript in Browser and try again!
+</noscript>
+
   <!-- loading layout replaced by app after startupp -->
-  <div class="app-loading">
-    <div class="logo"></div>
-    <svg class="spinner" viewBox="25 25 50 50">
-      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-    </svg>
-  </div>
+  
 </body>
 </html>
