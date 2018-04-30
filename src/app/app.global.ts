@@ -7,7 +7,7 @@ export class GlobalShared {
   //   'http://localhost:8080/uploads/' ;
   // serverpath: string = ((window.location.href).substr(0,5 ) === 'https') ? 'https://newtechserver.herokuapp.com/api/' :
   //   'http://localhost:8080/api/';
-  urlpath: string = 'https://newtech2.herokuapp.com/uploads/';
+  urlpath: string = 'https://newtech2.herokuapp.com/server/uploads/';
   serverpath: string = 'https://newtech2.herokuapp.com/api/';
   defaultimage: string = 'assets/images/default-placeholder.png'; // '../assets/images/default-placeholder.png'
 }
