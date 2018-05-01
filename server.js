@@ -38,6 +38,7 @@ app.use(sslRedirect());
 
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/server'));
 app.use(compression()); //compressing dist folder
 app.use(passport.initialize());
 // Start the app by listening on the default
